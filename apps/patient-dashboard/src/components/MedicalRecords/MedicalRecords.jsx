@@ -94,8 +94,15 @@ const MedicalRecords = () => {
     <div>
       <Row className="mb-4">
         <Col>
-          <h1>Medical Records</h1>
-          <p className="text-muted">Complete overview of your health records and test results</p>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h2>
+                <i className="fas fa-file-medical-alt text-primary me-2"></i>
+                Medical Records
+              </h2>
+              <p className="text-muted mb-0">Complete overview of your health records and test results</p>
+            </div>
+          </div>
         </Col>
       </Row>
 

@@ -135,8 +135,15 @@ const Medications = () => {
     <div>
       <Row className="mb-4">
         <Col>
-          <h1>My Medications</h1>
-          <p className="text-muted">Current and past prescriptions</p>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h2>
+                <i className="fas fa-pills text-primary me-2"></i>
+                My Medications
+              </h2>
+              <p className="text-muted mb-0">Current and past prescriptions</p>
+            </div>
+          </div>
         </Col>
       </Row>
 

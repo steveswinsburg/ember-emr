@@ -115,8 +115,11 @@ const Appointments = () => {
         <Col>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h1>My Appointments</h1>
-              <p className="text-muted">Schedule and manage your healthcare appointments</p>
+              <h2>
+                <i className="fas fa-calendar-check text-primary me-2"></i>
+                My Appointments
+              </h2>
+              <p className="text-muted mb-0">Schedule and manage your healthcare appointments</p>
             </div>
             <Button variant="primary" onClick={() => setShowScheduleModal(true)}>
               Schedule New Appointment

@@ -6,13 +6,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-brand {
-  font-weight: 600;
-  font-size: 1.25rem;
+/* Layout Styles */
+.main-content {
+  min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
+.page-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 1.5rem;
+}
+
+/* Sidebar Navigation Styles */
+.sidebar-navigation {
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-nav-link:hover:not(.active) {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  transform: translateX(2px);
+}
+
+.sidebar-nav-link.active {
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
+}
+
+.nav-item.active .nav-icon i {
+  transform: scale(1.1);
+}
+
+.sidebar-section-title {
+  letter-spacing: 0.5px;
+}
+
+/* Patient Header Styles */
+.patient-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.patient-detail {
+  padding: 0.25rem 0;
+}
+
+.patient-detail strong {
+  color: #495057;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Card Styles */
 .card {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border: 1px solid rgba(0, 0, 0, 0.125);
