@@ -57,6 +57,21 @@ body {
   border-bottom: 2px solid #e9ecef;
 }
 
+/* Patient Welcome Styles */
+.patient-welcome {
+  margin-bottom: 1.5rem;
+}
+
+.welcome-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6b6b20, #ff8e8e20);
+  border-radius: 50%;
+}
+
 .patient-detail {
   padding: 0.25rem 0;
 }

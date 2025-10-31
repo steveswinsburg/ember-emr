@@ -3,9 +3,9 @@ import { Alert, Card } from 'react-bootstrap';
 import { Alert as DesignAlert, Badge } from '@ember-emr/design-system';
 
 /**
- * PatientHeader Component
+ * PatientSticky Component
  * 
- * CRITICAL SAFETY COMPONENT - Must be displayed on every patient-related view
+ * CRITICAL SAFETY COMPONENT - Must be displayed on every patient-related view in clinician dashboard
  * Shows essential patient identification information to prevent medical errors
  * 
  * @param {Object} patient - Patient object with demographics
@@ -13,9 +13,9 @@ import { Alert as DesignAlert, Badge } from '@ember-emr/design-system';
  * @param {string} patient.gender - Patient's gender
  * @param {string} patient.dateOfBirth - Patient's date of birth (YYYY-MM-DD)
  * @param {string} patient.ihi - Individual Healthcare Identifier (Australia)
- * @param {boolean} showAlert - Whether to show safety alert (default: true)
+ * @param {boolean} showAlert - Whether to show safety alert (default: true for clinician dashboard)
  */
-const PatientHeader = ({ 
+const PatientSticky = ({ 
   patient = {}, 
   showAlert = true 
 }) => {
@@ -118,4 +118,4 @@ const PatientHeader = ({
   );
 };
 
-export default PatientHeader;
+export default PatientSticky;
