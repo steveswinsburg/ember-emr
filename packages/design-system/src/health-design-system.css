@@ -1,0 +1,292 @@
+/* Australian Government Health Design System inspired styles */
+/* Based on https://designsystem.health.gov.au/ */
+
+:root {
+  /* Primary Colors - Health Design System */
+  --hds-primary: #0066cc;
+  --hds-primary-dark: #004499;
+  --hds-primary-light: #3384d6;
+  
+  /* Secondary Colors */
+  --hds-secondary: #6c757d;
+  --hds-secondary-dark: #495057;
+  --hds-secondary-light: #adb5bd;
+  
+  /* Status Colors */
+  --hds-success: #198754;
+  --hds-success-dark: #146c43;
+  --hds-success-light: #4caf50;
+  
+  --hds-warning: #ffc107;
+  --hds-warning-dark: #e6ac00;
+  --hds-warning-light: #ffcd39;
+  
+  --hds-danger: #dc3545;
+  --hds-danger-dark: #b02a37;
+  --hds-danger-light: #f5c6cb;
+  
+  --hds-info: #0dcaf0;
+  --hds-info-dark: #0aa2c0;
+  --hds-info-light: #39d2f0;
+  
+  /* Neutral Colors */
+  --hds-light: #f8f9fa;
+  --hds-dark: #212529;
+  --hds-gray-100: #f8f9fa;
+  --hds-gray-200: #e9ecef;
+  --hds-gray-300: #dee2e6;
+  --hds-gray-400: #ced4da;
+  --hds-gray-500: #adb5bd;
+  --hds-gray-600: #6c757d;
+  --hds-gray-700: #495057;
+  --hds-gray-800: #343a40;
+  --hds-gray-900: #212529;
+  
+  /* Typography */
+  --hds-font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --hds-font-size-base: 1rem;
+  --hds-font-weight-normal: 400;
+  --hds-font-weight-medium: 500;
+  --hds-font-weight-semibold: 600;
+  --hds-font-weight-bold: 700;
+  
+  /* Spacing */
+  --hds-spacing-xs: 0.25rem;
+  --hds-spacing-sm: 0.5rem;
+  --hds-spacing-md: 1rem;
+  --hds-spacing-lg: 1.5rem;
+  --hds-spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --hds-border-radius: 0.375rem;
+  --hds-border-radius-sm: 0.25rem;
+  --hds-border-radius-lg: 0.5rem;
+  
+  /* Shadows */
+  --hds-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --hds-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --hds-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Base Typography */
+body {
+  font-family: var(--hds-font-family);
+  font-size: var(--hds-font-size-base);
+  font-weight: var(--hds-font-weight-normal);
+  line-height: 1.5;
+  color: var(--hds-gray-900);
+  background-color: var(--hds-light);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--hds-font-weight-semibold);
+  line-height: 1.2;
+  color: var(--hds-gray-900);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Links */
+a {
+  color: var(--hds-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hds-primary-dark);
+  text-decoration: underline;
+}
+
+/* Focus States for Accessibility */
+*:focus {
+  outline: 2px solid var(--hds-primary);
+  outline-offset: 2px;
+}
+
+/* Button Focus Override */
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+/* Accessible Color Overrides for Bootstrap */
+.text-primary { color: var(--hds-primary) !important; }
+.text-secondary { color: var(--hds-secondary) !important; }
+.text-success { color: var(--hds-success) !important; }
+.text-warning { color: var(--hds-warning-dark) !important; }
+.text-danger { color: var(--hds-danger) !important; }
+.text-info { color: var(--hds-info-dark) !important; }
+
+.bg-primary { background-color: var(--hds-primary) !important; }
+.bg-secondary { background-color: var(--hds-secondary) !important; }
+.bg-success { background-color: var(--hds-success) !important; }
+.bg-warning { background-color: var(--hds-warning) !important; }
+.bg-danger { background-color: var(--hds-danger) !important; }
+.bg-info { background-color: var(--hds-info) !important; }
+.bg-light { background-color: var(--hds-light) !important; }
+.bg-dark { background-color: var(--hds-dark) !important; }
+
+/* Button Variants */
+.btn-primary {
+  background-color: var(--hds-primary);
+  border-color: var(--hds-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--hds-primary-dark);
+  border-color: var(--hds-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--hds-secondary);
+  border-color: var(--hds-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--hds-secondary-dark);
+  border-color: var(--hds-secondary-dark);
+}
+
+.btn-success {
+  background-color: var(--hds-success);
+  border-color: var(--hds-success);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--hds-success-dark);
+  border-color: var(--hds-success-dark);
+}
+
+.btn-warning {
+  background-color: var(--hds-warning);
+  border-color: var(--hds-warning);
+  color: var(--hds-dark);
+}
+
+.btn-warning:hover {
+  background-color: var(--hds-warning-dark);
+  border-color: var(--hds-warning-dark);
+}
+
+.btn-danger {
+  background-color: var(--hds-danger);
+  border-color: var(--hds-danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--hds-danger-dark);
+  border-color: var(--hds-danger-dark);
+}
+
+.btn-info {
+  background-color: var(--hds-info);
+  border-color: var(--hds-info);
+  color: var(--hds-dark);
+}
+
+.btn-info:hover {
+  background-color: var(--hds-info-dark);
+  border-color: var(--hds-info-dark);
+  color: white;
+}
+
+/* Card Styles */
+.card {
+  border-radius: var(--hds-border-radius);
+  border: 1px solid var(--hds-gray-300);
+  box-shadow: var(--hds-shadow-sm);
+}
+
+.card-header {
+  background-color: var(--hds-gray-100);
+  border-bottom: 1px solid var(--hds-gray-300);
+  font-weight: var(--hds-font-weight-medium);
+}
+
+/* Alert Styles */
+.alert {
+  border-radius: var(--hds-border-radius);
+  border: 1px solid transparent;
+}
+
+.alert-primary {
+  background-color: rgba(0, 102, 204, 0.1);
+  border-color: var(--hds-primary-light);
+  color: var(--hds-primary-dark);
+}
+
+.alert-success {
+  background-color: rgba(25, 135, 84, 0.1);
+  border-color: var(--hds-success-light);
+  color: var(--hds-success-dark);
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-color: var(--hds-warning-light);
+  color: var(--hds-warning-dark);
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: var(--hds-danger-light);
+  color: var(--hds-danger-dark);
+}
+
+.alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  border-color: var(--hds-info-light);
+  color: var(--hds-info-dark);
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: var(--hds-font-weight-medium);
+  border-radius: var(--hds-border-radius-sm);
+}
+
+/* Navigation Styles */
+.navbar {
+  box-shadow: var(--hds-shadow-sm);
+}
+
+.navbar-brand {
+  font-weight: var(--hds-font-weight-bold);
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: var(--hds-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+.form-select:focus {
+  border-color: var(--hds-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+/* Utility Classes */
+.shadow-hds-sm { box-shadow: var(--hds-shadow-sm); }
+.shadow-hds { box-shadow: var(--hds-shadow); }
+.shadow-hds-lg { box-shadow: var(--hds-shadow-lg); }
+
+.border-radius-hds { border-radius: var(--hds-border-radius); }
+.border-radius-hds-sm { border-radius: var(--hds-border-radius-sm); }
+.border-radius-hds-lg { border-radius: var(--hds-border-radius-lg); }
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+}

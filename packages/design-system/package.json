@@ -3,40 +3,23 @@
   "version": "1.0.0",
   "description": "Design system components based on Australian Government Health Design System",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c --watch",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test": "jest",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
+    "build": "babel src --out-dir dist --copy-files",
+    "dev": "babel src --out-dir dist --copy-files --watch",
+    "test": "jest"
   },
   "dependencies": {
-    "@health.gov.au/health-design-system": "^3.0.0",
     "clsx": "^2.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@storybook/addon-essentials": "^7.0.0",
-    "@storybook/addon-interactions": "^7.0.0",
-    "@storybook/addon-links": "^7.0.0",
-    "@storybook/blocks": "^7.0.0",
-    "@storybook/react": "^7.0.0",
-    "@storybook/react-vite": "^7.0.0",
-    "@storybook/testing-library": "^0.2.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "rollup": "^4.0.0",
-    "storybook": "^7.0.0",
-    "typescript": "^5.0.0"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

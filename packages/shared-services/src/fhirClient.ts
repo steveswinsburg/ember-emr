@@ -1,10 +1,6 @@
 import axios from 'axios';
 
-export interface FHIRConfig {
-  baseURL: string;
-  timeout?: number;
-  headers?: Record<string, string>;
-}
+// Keep TypeScript for FHIR types but make it JavaScript-friendly
 
 export interface FHIRResource {
   resourceType: string;
@@ -17,24 +13,22 @@ export interface Bundle {
   id?: string;
   type: string;
   total?: number;
-  entry?: BundleEntry[];
-}
-
-export interface BundleEntry {
-  resource: FHIRResource;
-  search?: {
-    mode: string;
-  };
+  entry?: Array<{
+    resource: FHIRResource;
+    search?: {
+      mode: string;
+    };
+  }>;
 }
 
 export class FHIRClient {
   private client: any;
   private baseURL: string;
 
-  constructor(config: FHIRConfig) {
-    this.baseURL = config.baseURL;
+  constructor(config: any = {}) {
+    this.baseURL = config.baseURL || 'http://localhost:8080/fhir';
     this.client = axios.create({
-      baseURL: config.baseURL,
+      baseURL: this.baseURL,
       timeout: config.timeout || 10000,
       headers: {
         'Content-Type': 'application/fhir+json',
@@ -64,7 +58,7 @@ export class FHIRClient {
     return this.request('GET', `/Patient/${patientId}`);
   }
 
-  async searchPatients(params: Record<string, any> = {}): Promise<Bundle> {
+  async searchPatients(params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams(params);
     return this.request('GET', `/Patient?${searchParams}`);
   }
@@ -78,7 +72,7 @@ export class FHIRClient {
   }
 
   // Observation methods
-  async getPatientObservations(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientObservations(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params
@@ -95,7 +89,7 @@ export class FHIRClient {
   }
 
   // Condition methods
-  async getPatientConditions(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientConditions(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params
@@ -112,7 +106,7 @@ export class FHIRClient {
   }
 
   // MedicationRequest methods
-  async getPatientMedications(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientMedications(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params
@@ -129,7 +123,7 @@ export class FHIRClient {
   }
 
   // Appointment methods
-  async getPatientAppointments(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientAppointments(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params
@@ -146,7 +140,7 @@ export class FHIRClient {
   }
 
   // Diagnostic Report methods
-  async getPatientDiagnosticReports(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientDiagnosticReports(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params
@@ -163,7 +157,7 @@ export class FHIRClient {
   }
 
   // Immunization methods
-  async getPatientImmunizations(patientId: string, params: Record<string, any> = {}): Promise<Bundle> {
+  async getPatientImmunizations(patientId: string, params: any = {}): Promise<Bundle> {
     const searchParams = new URLSearchParams({
       patient: patientId,
       ...params

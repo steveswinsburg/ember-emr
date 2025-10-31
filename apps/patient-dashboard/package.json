@@ -10,8 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ember-emr/design-system": "^1.0.0",
-    "@ember-emr/shared-services": "^1.0.0",
+    "axios": "^1.13.1",
     "bootstrap": "^5.3.8",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",

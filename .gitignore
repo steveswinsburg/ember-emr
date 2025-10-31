@@ -1,0 +1,4 @@
+apps/clinician-dashboard/node_modules
+node_modules
+packages/shared-services/dist
+packages/design-system/dist

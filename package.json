@@ -16,13 +16,13 @@
     "patient:build": "npm run build --workspace=apps/patient-dashboard",
     "clinician:dev": "npm run dev --workspace=apps/clinician-dashboard",
     "clinician:build": "npm run build --workspace=apps/clinician-dashboard",
+    "shared:build": "npm run build --workspace=packages/shared-services && npm run build --workspace=packages/design-system",
     "clean": "npm run clean --workspaces --if-present",
     "install:all": "npm install"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "prettier": "^3.0.0",
-    "typescript": "^5.0.0"
+    "prettier": "^3.0.0"
   },
   "engines": {
     "node": ">=18.0.0",
