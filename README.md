@@ -1,5 +1,9 @@
 # Ember EMR - Electronic Medical Records System
 
+[![Build EMR Components](https://github.com/steveswinsburg/ember-emr/actions/workflows/build.yml/badge.svg)](https://github.com/steveswinsburg/ember-emr/actions/workflows/build.yml)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A modern, FHIR-compliant Electronic Medical Records system built with React and JavaScript, with TypeScript used specifically for FHIR data handling to ensure type safety in healthcare operations.
 
 ## Project Structure
