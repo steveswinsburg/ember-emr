@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SidebarNavigation from './SidebarNavigation';
-import PatientHeader from '../PatientHeader/PatientHeader';
+import PatientWelcome from '../PatientWelcome/PatientWelcome';
 
 const Layout = ({ children }) => {
   return (
@@ -15,8 +15,8 @@ const Layout = ({ children }) => {
         {/* Main Content Area */}
         <Col className="main-content">
           <div className="p-4">
-            {/* Patient Safety Header - Always visible for safety */}
-            <PatientHeader />
+            {/* Patient Welcome Header */}
+            <PatientWelcome />
             
             {/* Page Content */}
             <div className="page-content">
