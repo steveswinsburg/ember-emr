@@ -82,8 +82,15 @@ const PatientProfile = () => {
     <div>
       <Row className="mb-4">
         <Col>
-          <h1>My Profile</h1>
-          <p className="text-muted">Personal information and contact details</p>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h2>
+                <i className="fas fa-user-circle text-primary me-2"></i>
+                My Profile
+              </h2>
+              <p className="text-muted mb-0">Personal information and contact details</p>
+            </div>
+          </div>
         </Col>
       </Row>
 

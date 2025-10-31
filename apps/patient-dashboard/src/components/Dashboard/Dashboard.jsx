@@ -72,8 +72,15 @@ const Dashboard = () => {
     <div>
       <Row className="mb-4">
         <Col>
-          <h1>Welcome back, {patient ? formatPatientName(patient) : 'Patient'}!</h1>
-          <p className="text-muted">Here's an overview of your health information</p>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h2>
+                <i className="fas fa-tachometer-alt text-primary me-2"></i>
+                Dashboard Overview
+              </h2>
+              <p className="text-muted mb-0">Your latest health information at a glance</p>
+            </div>
+          </div>
         </Col>
       </Row>
 

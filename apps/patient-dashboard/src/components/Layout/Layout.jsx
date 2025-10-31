@@ -1,15 +1,31 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import Navigation from './Navigation';
+import { Container, Row, Col } from 'react-bootstrap';
+import SidebarNavigation from './SidebarNavigation';
+import PatientHeader from '../PatientHeader/PatientHeader';
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <Navigation />
-      <Container fluid className="px-4">
-        {children}
-      </Container>
-    </>
+    <Container fluid className="p-0">
+      <Row className="g-0">
+        {/* Sidebar Navigation */}
+        <Col xs="auto">
+          <SidebarNavigation />
+        </Col>
+        
+        {/* Main Content Area */}
+        <Col className="main-content">
+          <div className="p-4">
+            {/* Patient Safety Header - Always visible for safety */}
+            <PatientHeader />
+            
+            {/* Page Content */}
+            <div className="page-content">
+              {children}
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
