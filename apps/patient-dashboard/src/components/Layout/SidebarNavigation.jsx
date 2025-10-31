@@ -6,61 +6,46 @@ import { useLocation } from 'react-router-dom';
 /**
  * SidebarNavigation Component
  * 
- * Left sidebar navigation for patient dashboard with icons and organized sections
+ * Simplified left sidebar navigation for patient dashboard
  */
 const SidebarNavigation = () => {
   const location = useLocation();
 
   const navigationItems = [
     {
-      section: 'Overview',
-      items: [
-        {
-          path: '/',
-          label: 'Dashboard',
-          icon: 'fas fa-tachometer-alt',
-          description: 'Overview of your health information'
-        }
-      ]
+      path: '/',
+      label: 'Dashboard',
+      icon: 'fas fa-home'
     },
     {
-      section: 'Personal Information',
-      items: [
-        {
-          path: '/profile',
-          label: 'My Profile',
-          icon: 'fas fa-user-circle',
-          description: 'Personal details and contact information'
-        }
-      ]
+      path: '/my-details',
+      label: 'My Details',
+      icon: 'fas fa-user'
     },
     {
-      section: 'Medical Information',
-      items: [
-        {
-          path: '/medical-records',
-          label: 'Medical Records',
-          icon: 'fas fa-file-medical-alt',
-          description: 'Health history and medical documents'
-        },
-        {
-          path: '/medications',
-          label: 'Medications',
-          icon: 'fas fa-pills',
-          description: 'Current and past medications'
-        }
-      ]
+      path: '/allergies',
+      label: 'Allergies',
+      icon: 'fas fa-exclamation-triangle'
     },
     {
-      section: 'Healthcare Services',
-      items: [
-        {
-          path: '/appointments',
-          label: 'Appointments',
-          icon: 'fas fa-calendar-check',
-          description: 'Upcoming and past appointments'
-        }
-      ]
+      path: '/medications',
+      label: 'Medications',
+      icon: 'fas fa-pills'
+    },
+    {
+      path: '/appointments',
+      label: 'Appointments',
+      icon: 'fas fa-calendar'
+    },
+    {
+      path: '/medical-records',
+      label: 'Medical Records',
+      icon: 'fas fa-file-medical'
+    },
+    {
+      path: '/test-results',
+      label: 'Test Results',
+      icon: 'fas fa-vial'
     }
   ];
 
@@ -72,62 +57,43 @@ const SidebarNavigation = () => {
   };
 
   return (
-    <div className="sidebar-navigation bg-light border-end" style={{ minHeight: '100vh', width: '280px' }}>
+    <div className="sidebar-navigation bg-white border-end" style={{ minHeight: '100vh', width: '240px' }}>
       <div className="p-3">
         <div className="sidebar-header mb-4">
-          <h6 className="text-muted text-uppercase small fw-bold mb-0">
-            <i className="fas fa-heartbeat me-2 text-danger"></i>
-            Patient Portal
+          <h6 className="text-primary fw-bold mb-0">
+            <i className="fas fa-heartbeat me-2"></i>
+            My Health
           </h6>
         </div>
 
-        {navigationItems.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="nav-section mb-4">
-            <h6 className="sidebar-section-title text-muted text-uppercase small fw-bold mb-3 px-2">
-              {section.section}
-            </h6>
-            
-            <Nav className="flex-column">
-              {section.items.map((item, itemIndex) => (
-                <LinkContainer 
-                  key={itemIndex} 
-                  to={item.path}
-                  className={`nav-item ${isActiveLink(item.path) ? 'active' : ''}`}
-                >
-                  <Nav.Link 
-                    className={`sidebar-nav-link d-flex align-items-start p-3 border-0 ${
-                      isActiveLink(item.path) 
-                        ? 'bg-primary text-white active' 
-                        : 'text-dark hover-bg-light'
-                    }`}
-                    style={{
-                      borderRadius: '8px',
-                      marginBottom: '4px',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    <div className="nav-icon me-3 mt-1">
-                      <i className={`${item.icon} ${isActiveLink(item.path) ? 'text-white' : 'text-primary'}`}></i>
-                    </div>
-                    <div className="nav-content flex-grow-1">
-                      <div className="nav-label fw-semibold mb-1">
-                        {item.label}
-                      </div>
-                      <div 
-                        className={`nav-description small ${
-                          isActiveLink(item.path) ? 'text-white-50' : 'text-muted'
-                        }`}
-                        style={{ fontSize: '0.75rem', lineHeight: '1.2' }}
-                      >
-                        {item.description}
-                      </div>
-                    </div>
-                  </Nav.Link>
-                </LinkContainer>
-              ))}
-            </Nav>
-          </div>
-        ))}
+        <Nav className="flex-column">
+          {navigationItems.map((item, index) => (
+            <LinkContainer 
+              key={index} 
+              to={item.path}
+              className="nav-item mb-1"
+            >
+              <Nav.Link 
+                className={`sidebar-nav-link d-flex align-items-center p-3 border-0 ${
+                  isActiveLink(item.path) 
+                    ? 'bg-primary text-white active' 
+                    : 'text-dark hover-bg-light'
+                }`}
+                style={{
+                  borderRadius: '8px',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <div className="nav-icon me-3">
+                  <i className={`${item.icon} ${isActiveLink(item.path) ? 'text-white' : 'text-primary'}`}></i>
+                </div>
+                <div className="nav-label fw-semibold">
+                  {item.label}
+                </div>
+              </Nav.Link>
+            </LinkContainer>
+          ))}
+        </Nav>
       </div>
 
       <style jsx>{`
@@ -142,10 +108,6 @@ const SidebarNavigation = () => {
         
         .nav-item.active .nav-icon i {
           transform: scale(1.1);
-        }
-        
-        .sidebar-section-title {
-          letter-spacing: 0.5px;
         }
       `}</style>
     </div>
