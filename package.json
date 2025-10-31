@@ -1,0 +1,37 @@
+{
+  "name": "ember-emr",
+  "version": "1.0.0",
+  "description": "Electronic Medical Records system with patient and clinician applications",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "patient:dev": "npm run dev --workspace=apps/patient-dashboard",
+    "patient:build": "npm run build --workspace=apps/patient-dashboard",
+    "clinician:dev": "npm run dev --workspace=apps/clinician-dashboard",
+    "clinician:build": "npm run build --workspace=apps/clinician-dashboard",
+    "shared:build": "npm run build --workspace=packages/shared-services && npm run build --workspace=packages/design-system",
+    "clean": "npm run clean --workspaces --if-present",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steveswinsburg/ember-emr.git"
+  },
+  "author": "Steve Swinsburg",
+  "license": "MIT"
+}

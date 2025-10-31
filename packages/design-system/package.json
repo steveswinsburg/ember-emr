@@ -1,0 +1,28 @@
+{
+  "name": "@ember-emr/design-system",
+  "version": "1.0.0",
+  "description": "Design system components based on Australian Government Health Design System",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files",
+    "dev": "babel src --out-dir dist --copy-files --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@ember-emr/shared-services",
+  "version": "1.0.0",
+  "description": "Shared FHIR services with TypeScript for type safety",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
