@@ -14,6 +14,7 @@ body {
 .main-content {
   min-height: 100vh;
   background-color: #f8f9fa;
+  max-width: calc(100vw - 240px); /* Account for sidebar width */
 }
 
 .page-content {
@@ -21,6 +22,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   padding: 1.5rem;
+  max-width: 1200px; /* Consistent max width */
+  margin: 0 auto; /* Center the content */
 }
 
 /* Sidebar Navigation Styles */
